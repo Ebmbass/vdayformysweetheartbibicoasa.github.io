@@ -1,0 +1,55 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Întrebare importantă ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: #ffe6f0;
+            margin-top: 100px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+        }
+        #yes {
+            background-color: #ff4d88;
+            color: white;
+        }
+        #no {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Vrei să fii partenera mea de Valentine's Day? ❤️</h1>
+
+<button id="yes" onclick="yesClick()">DA 💖</button>
+<button id="no" onclick="noClick()">Nu 😢</button>
+
+<p id="message"></p>
+
+<script>
+function yesClick() {
+    document.getElementById("message").innerHTML =
+    "Yaaay! Abia aștept să petrecem împreună! 💕";
+}
+
+function noClick() {
+    document.getElementById("no").style.position = "absolute";
+    document.getElementById("no").style.left =
+        Math.random() * window.innerWidth + "px";
+    document.getElementById("no").style.top =
+        Math.random() * window.innerHeight + "px";
+}
+</script>
+
+</body>
+</html>
