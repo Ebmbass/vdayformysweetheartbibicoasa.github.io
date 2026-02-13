@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Pentru Bibica ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffd6e8, #ffeef5);
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 100px;
+    color: #ff2e7e;
+    font-size: 40px;
+}
+
+p {
+    font-size: 22px;
+    color: #444;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    transition: 0.3s;
+}
+
+#yes {
+    background-color: #ff4d88;
+    color: white;
+}
+
+#yes:hover {
+    background-color: #ff1a66;
+    transform: scale(1.1);
+}
+
+#no {
+    background-color: #cccccc;
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    color: #ff4d88;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Bibicaaa 💕</h1>
+<p>Vrei să fii partenera mea de Valentine's Day? 💖</p>
+
+<button id="yes" onclick="yesClick()">DAAAA 😍</button>
+<button id="no" onclick="noClick()">Nu 🙈</button>
+
+<p id="message"></p>
+
+<script>
+function yesClick() {
+    document.getElementById("message").innerHTML =
+    "Yaaay Bibica! 💞 Abia aștept să te scot la ceva frumos și să te țin în brațe! 💕";
+}
+
+function noClick() {
+    let btn = document.getElementById("no");
+    btn.style.position = "absolute";
+    btn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    btn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+}
+
+// inimioare care cad
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
